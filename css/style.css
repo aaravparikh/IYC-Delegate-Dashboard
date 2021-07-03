@@ -1,0 +1,246 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+body {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(56, 56, 56);
+}
+
+p {
+    text-align: center;
+}
+
+.pageHolder {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-form {
+    position: absolute;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    box-shadow: black;
+}
+
+.background-graphic {
+    position: relative;
+    padding: 200px;
+    background-color: rgb(127, 164, 177);
+    right: -30px;
+    top: 60px;
+    border-radius: 10px;
+}
+
+.background-graphic-dark {
+    position: relative;
+    padding: 200px;
+    background-color: darkblue;
+    right: 30px;
+    top: -60px;
+    border-radius: 10px;
+}
+
+.signup {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 500px;
+}
+
+.formTitle {
+    font-size: 30px;
+    padding-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.imgholder {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputField {
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    width:600px;
+}
+
+.inputField:focus{
+    background-color: white;
+    color: black;
+}
+
+.submit {
+    max-width: 50%;
+    background-color: transparent;
+    border: solid black 3px;
+    margin-top: 10px;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submit:hover {
+    background-color: black;
+    color: white;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    /* Firefox */
+    font-size: 20px;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+    font-size: 20px;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+    font-size: 20px;
+}
+
+.altAction {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.mainNav {
+    display: flex;
+    background-color: black;
+    width: 100vw;
+    color: white;
+}
+
+.navDiv{
+    flex-direction: row;
+    padding: 10px;
+}
+
+.mainBody{
+    display: grid;
+    grid-template-columns: 330px 330px 330px 330px ;
+    grid-auto-rows: minmax(400px, auto);
+    justify-content:center;
+    
+    
+}
+
+.grid-item{
+    background-color: rgba(1, 146, 146, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.registrationStatus{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.resources{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-content: start;
+}
+
+.status{
+    font-size: 20px;
+    color: black    ;
+    text-align: center;
+    
+}
+
+.green{
+    color:green;
+}
+
+.yellow{
+    color: orange;
+}
+
+.red{
+    color:red;
+}
+
+.indicator{
+    width: 150px;
+    height:150px;
+    margin:0px;
+    padding:0px;
+}
+
+.dashboard{
+    width:100vw;
+    height:100vh;
+
+}
+
+.registerFull {
+    background-color: grey;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    box-shadow: none;
+    color: black;
+}
+
+.display{
+    display: inline-flex;
+    flex-direction: column;
+    color:black;
+    border-radius: 5px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.long{
+    height:100px;
+    padding:20px;
+    width:297px;
+}
