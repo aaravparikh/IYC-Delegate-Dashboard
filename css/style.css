@@ -244,3 +244,13 @@ p {
     padding:20px;
     width:297px;
 }
+
+.prefInput {
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    width:600px;
+}

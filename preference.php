@@ -20,6 +20,7 @@
             <div class="imgholder">
                 <img src="img/IYC Logo.png" alt="" class="logo">
             </div>
+            <div class="preferenceForm">
             <form action="includes/complete.inc.php" class="signup" method="POST" autocomplete="off">
                 <h6 class="formTitle">Assign Preferences</h6>
                 <?php
@@ -33,7 +34,7 @@
                     }
                 }
                 ?>
-                <select name="committee1" placeholder="1st Committee Preference" class="inputField" required="">
+                <select name="committee1" placeholder="1st Committee Preference" class="prefInput" required="">
                     <option disabled="" selected="">1st Preference [Committee] </option>
                     <option value = "g8">G8</option>
                     <option value = "g14">G14</option>
@@ -41,15 +42,15 @@
                     <option value = "gso">GSO</option>
                     <option value = "gmc">GMC</option>
                 </select>
-                <input type="text" name="mobile" placeholder="Mobile Number" class="inputField">
-                <input type="text" name="school" placeholder="School Name" class="inputField">
-                <input type="text" name="grade" placeholder="Grade" class="inputField">
-                <input type="text" name="division" placeholder="Division (JNIS ONLY)" class="inputField">
-                <textarea type="text" name="munXP" placeholder="MUN Experience" class="inputField long"></textarea>
+                <input type="text" name="mobile" placeholder="Mobile Number" class="prefInput item2">
+                <input type="text" name="school" placeholder="School Name" class="prefInput item3">
+                <input type="text" name="grade" placeholder="Grade" class="prefInput item4">
+                <input type="text" name="division" placeholder="Division (JNIS ONLY)" class="prefInput item5">
+                <textarea type="text" name="munXP" placeholder="MUN Experience" class="prefInput textbox"></textarea>
                 <button class="submit inputField" type="submit" name="submit">Register</button>
                 <p class="altAction"><a href="help.php"> Help</a> </p>
             </form>
-
+            </div>
 
 
         </div>
