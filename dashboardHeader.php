@@ -16,7 +16,8 @@ if ($delData !== null){
 $_SESSION["delId"] = $delData["delId"];
 $_SESSION["delName"] = $delData["delName"];
 $_SESSION["paymentStatus"] = $delData["paymentStatus"];
-}
+$data = getPreference($conn, $delData["delId"]);
+$_SESSION["pId"] = $data["pId"];}    
 
 
 ?>
@@ -25,7 +26,7 @@ $_SESSION["paymentStatus"] = $delData["paymentStatus"];
 <div class='mainNav'>
     <?php 
         if(isset($_SESSION["delName"])){
-            echo "<div class='navDiv'> Welcome,".$_SESSION["delName"] ."</div>";
+            echo "<div class='navDiv'> Welcome, ".$_SESSION["delName"] ."</div>";
         }else{
             echo "<div class='navDiv'> Please Complete Registration </div>";
         }

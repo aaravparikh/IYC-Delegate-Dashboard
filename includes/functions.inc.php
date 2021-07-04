@@ -129,6 +129,23 @@ function completeRegistration($conn, $name, $mobile, $school, $grade, $division,
     exit();
 }
 
+function assignPreference($conn, $committee1, $country1a, $country1b, $country1c, $committee2, $country2a, $country2b, $country2c,$committee3, $country3a, $country3b, $country3c, $delId)
+{
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+    $sql = "INSERT INTO preference(committee1, country1a, country1b, country1c, committee2, country2a, country2b, country2c, committee3, country3a, country3b, country3c ,delId ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    
+    mysqli_stmt_prepare($stmt, $sql);
+
+    mysqli_stmt_bind_param($stmt, "ssssssssssssi", $committee1, $country1a, $country1b, $country1c, $committee2, $country2a, $country2b, $country2c,$committee3, $country3a, $country3b, $country3c, $delId);
+
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location:../index.php?error=none");
+    exit();
+}
+
 function loginUser($conn, $email, $pwd){
     $emailExists = emailExists($conn, $email);
 
@@ -162,6 +179,18 @@ function getStatus($conn){
     $user = $result->fetch_assoc(); // fetch the data  
     return $user;
 }
+
+function getPreference($conn, $delId){
+    $sql = "SELECT * FROM preference WHERE delId=?"; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("i", $delId);
+    $stmt->execute();
+    $result = $stmt->get_result(); // get the mysqli result
+    $pId = $result->fetch_assoc(); // fetch the data  
+    return $pId;
+}
+
+
 
 
 

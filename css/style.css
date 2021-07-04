@@ -92,7 +92,7 @@ p {
     border: none;
     background-color: rgb(44, 44, 44);
     color: white;
-    width:600px;
+    width:300px;
 }
 
 .inputField:focus{
@@ -253,4 +253,13 @@ p {
     background-color: rgb(44, 44, 44);
     color: white;
     width:600px;
+}
+
+.item2{
+    width:150px
+}
+
+.prefInput:focus{
+    background-color: white;
+    color: black;
 }
