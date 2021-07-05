@@ -177,6 +177,8 @@ p {
 .registrationStatus{
     grid-column-start: 1;
     grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: auto;
 }
 
 .resources{
@@ -188,7 +190,7 @@ p {
 }
 
 .status{
-    font-size: 20px;
+    font-size: 25px;
     color: black    ;
     text-align: center;
     
@@ -262,4 +264,22 @@ p {
 .prefInput:focus{
     background-color: white;
     color: black;
+}
+
+.resources{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    vertical-align: middle;
+}
+
+ .table, th, td{
+    border: 1px solid black;
+    padding: 3px;
+    
+}
+
+.profile{
+    font-size: 20px;
+    font-weight: bold;
 }

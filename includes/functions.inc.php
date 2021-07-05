@@ -163,6 +163,7 @@ function loginUser($conn, $email, $pwd){
     else if($dbPass==$pwd){
         session_start();
         $_SESSION["userId"] = $emailExists["userId"];
+        $_SESSION["email"] = $email;
         header("location:../index.php");
         exit();
     }

@@ -9,30 +9,34 @@ if (!isset($_SESSION["userId"])) {
     header("location:register.php");
 }
 
-$delData= getStatus($conn);   
+$delData = getStatus($conn);
 
 
-if ($delData !== null){
-$_SESSION["delId"] = $delData["delId"];
-$_SESSION["delName"] = $delData["delName"];
-$_SESSION["paymentStatus"] = $delData["paymentStatus"];
-$data = getPreference($conn, $delData["delId"]);
-$_SESSION["pId"] = $data["pId"];}    
+if ($delData !== null) {
+    $_SESSION["delId"] = $delData["delId"];
+    $_SESSION["delName"] = $delData["delName"];
+    $_SESSION["paymentStatus"] = $delData["paymentStatus"];
+    if ($data = getPreference($conn, $delData["delId"])) {
+        $_SESSION["pId"] = $data["pId"];
+    }
+};
 
 
 ?>
 
-<container class = "dashboard">
-<div class='mainNav'>
-    <?php 
-        if(isset($_SESSION["delName"])){
-            echo "<div class='navDiv'> Welcome, ".$_SESSION["delName"] ."</div>";
-        }else{
+<container class="dashboard">
+    <div class='mainNav'>
+        <?php
+        if (isset($_SESSION["delName"])) {
+            echo "<div class='navDiv'> Welcome, " . $_SESSION["delName"] . "</div>";
+        } else {
             echo "<div class='navDiv'> Please Complete Registration </div>";
         }
-    ?>
-    <div class='navDiv'> IYC Home</div>
-    <div class='navDiv '> Profile</div>
-    <a href="includes/logout.inc.php"><div class='navDiv '> Logout</div></a>
+        ?>
+        <div class='navDiv'> IYC Home</div>
+        <div class='navDiv '> Profile</div>
+        <a href="includes/logout.inc.php">
+            <div class='navDiv '> Logout</div>
+        </a>
 
-</div>
+    </div>

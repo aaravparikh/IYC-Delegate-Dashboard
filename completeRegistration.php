@@ -20,7 +20,7 @@
             <div class="imgholder">
                 <img src="img/IYC Logo.png" alt="" class="logo">
             </div>
-            <form action="includes/complete.inc.php" class="signup" method="POST" autocomplete="off">
+            <form action="includes/complete.inc.php" class="signup" method="POST" autocomplete="off" autocapitalize="on">
                 <h6 class="formTitle">Complete Registration</h6>
                 <?php
                 if (isset($_GET["error"])) {
