@@ -1,29 +1,17 @@
 <?php
 
-require_once 'dbh.inc.php';
-require_once 'functions.inc.php';
-
-if(isset($_POST["submit"])){
-
+session_start();
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
+    $delId = $_SESSION["delId"];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    if(emptyInputLogin($email,$pwd) !== false){
-        header("location: ../login.php?error=emptyInput");
-        exit();
+    $query = "UPDATE  deldata SET paymentStatus = 'processing' WHERE delId =".$delId;
+    if ($conn->query($query)) {
+        header("location: https://www.schoolpay.co.in/form_generator/view.php?id=31370");
+    } else {
+        echo $conn->error;
     }
 
-    if(invalidEmail($email) !== false){
-        header("location: ../login.php?error=invalidEmail");
-        exit();
-    }
- 
-    loginUser($conn, $email, $pwd);
-}
-else{
-    header("location: ../login.php");
-    exit();
-}

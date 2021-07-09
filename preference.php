@@ -10,13 +10,13 @@ if (!isset($_SESSION["userId"])) {
 
 <container class="pageHolder">
 
-    <div class="signup-form background-graphic-dark"></div>
+    <!-- <div class="signup-form background-graphic-dark"></div>
 
-    <div class="signup-form background-graphic">
+    <div class="signup-form background-graphic"> -->
 
     </div>
 
-    <div class="signup-form">
+    <div class="preference-form">
         <div class="imgholder">
             <img src="img/IYC Logo.png" alt="" class="logo">
         </div>

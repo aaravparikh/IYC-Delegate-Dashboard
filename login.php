@@ -8,10 +8,10 @@
 
     <container class="pageHolder">
 
-        <div class="signup-form background-graphic-dark"></div>
-
-        <div class="signup-form background-graphic">
-
+<!--         <div class="signup-form background-graphic-dark"></div>
+ -->
+<!--         <div class="signup-form background-graphic">
+ -->
         </div>
 
         <div class="signup-form">

@@ -43,20 +43,23 @@ require_once("dashboardHeader.php");
 
                 <h6 class="status">Registration Fees:</h6><br>
                     <?php if (isset($_SESSION["paymentStatus"])) {
-                        if ($_SESSION["paymentStatus"] !== "pending") {
+                        if ($_SESSION["paymentStatus"] === "complete") {
                             echo "<p>Paid </p>
                    <img src='img/complete.png' alt='green-tick' class='indicator complete'>";
+                        } else if($_SESSION["paymentStatus"] === "processing"){
+                            echo "<p>Processing </p><br>
+                    <img src='img/processing.png' alt='processing' height='110px' width='110px'>";
                         } else {
                             echo "<p>Pending </p>
                     <img src='img/pending.png' alt='caution' class='indicator complete'>
-                    <a href='payment.inc.php?submit=true'>
+                    <a href=' includes/payment.inc.php'>
                     <div class='registerFull'> Complete Payment </div>
                     </a>";
                         }
                     } else {
                         echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
-                <a href='completeRegistration.php'>
+                <a href='completeRegistration.php' method='POST' value = 'submit'>
                     <div class='registerFull'> Complete Registration </div>
                 </a>";
                     }
@@ -101,9 +104,10 @@ require_once("dashboardHeader.php");
     <div class="grid-item">
         <h6 class="status"> Profile </h6>
         <?php
-        
-        $delId= $_SESSION["delId"];
 
+        
+        if(isset($_SESSION["delId"])){
+        $delId = $_SESSION["delId"];
         $sql = "SELECT * FROM deldata WHERE delId=?"; // SQL with parameters
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $delId);
@@ -121,7 +125,11 @@ require_once("dashboardHeader.php");
         echo "<p class='profile' >MUN Experience</p><p>".$pId["delMunXP"]."</p><br>";
         echo "<p class='profile' >Committee</p><p>".$pId["committee"]."</p><br>";
         echo "<p class='profile' >Country</p><p>".$pId["country"]."</p><br>";
-        echo "</div>";
+        echo "</div>";}
+        else{
+            echo "<p class='profile'> Please Complete Registration First </p>";
+        }
+        
 
         
         ?>

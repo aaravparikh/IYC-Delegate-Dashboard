@@ -7,10 +7,10 @@
 
     <container class="pageHolder">
 
-        <div class="signup-form background-graphic-dark"></div>
-
-        <div class="signup-form background-graphic">
-
+<!--         <div class="signup-form background-graphic-dark"></div>
+ -->
+<!--         <div class="signup-form background-graphic">
+ -->
         </div>
 
         <div class="signup-form">
@@ -18,7 +18,7 @@
                 <img src="img/IYC Logo.png" alt="" class="logo">
             </div>
             <form action="includes/signup.inc.php" class="signup" method="POST">
-                <h6 class="formTitle">Delegate Registration</h6>
+                <br><h6 class="formTitle">Delegate Registration</h6>
                 <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyInput") {
