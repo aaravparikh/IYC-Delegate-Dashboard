@@ -16,6 +16,7 @@ if ($delData !== null) {
     $_SESSION["delId"] = $delData["delId"];
     $_SESSION["delName"] = $delData["delName"];
     $_SESSION["paymentStatus"] = $delData["paymentStatus"];
+    $_SESSION["discordStatus"] = $delData["discordStatus"];
     if ($data = getPreference($conn, $delData["delId"])) {
         $_SESSION["pId"] = $data["pId"];
     }

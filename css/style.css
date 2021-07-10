@@ -3,6 +3,7 @@
     margin: 0px;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
+    color: white;
 }
 
 p{
@@ -178,44 +179,59 @@ p {
 .mainBody{
     display: grid;
     grid-template-columns: 330px 330px 330px 330px ;
-    grid-auto-rows: minmax(400px, auto);
     justify-content:center;
     background-color: black;
-    
-    
+    grid-gap:20px;
+    column-gap: 50px;
+    grid-template-areas: 
+        "status status status profile"
+        "resources resources resources profile"
+        "resources resources resources profile"
+        ;
 }
 
 .grid-item{
-    backdrop-filter: blur(10px);
     border-radius: 5px;
-    margin: 20px;
-    padding: 10px;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    border: skyblue solid 10px;
-    
+    background-color: rgb(78, 78, 78);   
+    border:skyblue 10px solid;   
 }
 
 .registrationStatus{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: auto;
+    grid-area: status;
 }
 
+.sectionLine{
+    width:100%;
+    background-color: black;
+}
+/* .sectionLine::after{
+    border-bottom: 3px solid black;
+    content: "Profile";
+} */
+
 .resources{
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    justify-content: start;
+    grid-area: resources;
+}
+
+.profile{
+    grid-area:profile;
+}
+
+
+.statusField{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
 .status{
     font-size: 25px;
-    color: black    ;
+    color: white    ;
     text-align: center;
     
 }
@@ -265,7 +281,7 @@ p {
 .display{
     display: inline-flex;
     flex-direction: column;
-    color:black;
+    color:white;
     border-radius: 5px;
     justify-content: center;
     align-content: center;
@@ -305,7 +321,7 @@ p {
 }
 
  .table, th, td{
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 3px;
     
 }
