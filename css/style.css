@@ -178,7 +178,7 @@ p {
 
 .mainBody{
     display: grid;
-    grid-template-columns: 330px 330px 330px 330px ;
+    grid-template-columns: 280px 280px 200px 280px ;
     justify-content:center;
     background-color: black;
     grid-gap:20px;
