@@ -5,21 +5,6 @@ require_once("dashboardHeader.php");
 ?>
 <br>
 
-            ?>
-        </div>
-    </div>
-
-    <div class="grid-item indicatorPanel">
-        <div class="statusField">
-            <h6 class="status">Committee Preference:</h6><br>
-            <?php if (isset($_SESSION["pId"])) {
-                echo "<p>Selected </p>
-            <img src='img/complete.png' alt='green-tick' class='indicator complete'>";
-            } else if (isset($_SESSION["delId"])) {
-                echo "<p>Not Selected </p>
-            <img src='img/pending.png' alt='caution' class='indicator complete'>
-            <a href='preference.php'>
-
 
 </container>
 
