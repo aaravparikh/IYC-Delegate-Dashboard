@@ -16,28 +16,34 @@ if ($delData !== null) {
     $_SESSION["delId"] = $delData["delId"];
     $_SESSION["delName"] = $delData["delName"];
     $_SESSION["paymentStatus"] = $delData["paymentStatus"];
-    $_SESSION["discordStatus"] = $delData["discordStatus"];
+    $_SESSION["discordStatus"] = $delData["discordStatus"]; 
     if ($data = getPreference($conn, $delData["delId"])) {
         $_SESSION["pId"] = $data["pId"];
     }
 };
-
-
 ?>
+    <!-- (A) MENU WRAPPER -->
+<nav id="hamnav">
+    
+  <!-- (B) THE HAMBURGER -->
+  <label for="hamburger">&#9776;</label>
+  <input type="checkbox" id="hamburger"/>
+ 
+  <!-- (C) MENU ITEMS -->
 
-<container class="dashboard">
-    <div class='mainNav'>
-        <?php
-        if (isset($_SESSION["delName"])) {
-            echo "<div class='navDiv'> Welcome, " . $_SESSION["delName"] . "</div>";
+  <div id="hamitems">
+  
+    <a href="#"><?php
+        if (isset($_SESSION["delName"])) { 
+            echo "Welcome, ".$_SESSION["delName"];
         } else {
-            echo "<div class='navDiv'> Please Complete Registration </div>";
+            echo "Please Complete Registration";
         }
-        ?>
-        <div class='navDiv'> IYC Home</div>
-        <div class='navDiv '> Profile</div>
-        <a href="includes/logout.inc.php">
-            <div class='navDiv '> Logout</div>
-        </a>
-
-    </div>
+        ?> </a>
+    <a href="https://jnisiyc.com">Home</a>
+    <a href="index.php">Dashboard</a>
+    <a href="muntools.php">Resources</a>
+    <a href="muntools.php">Chat</a>
+    <a href="includes/logout.inc.php">Logout</a>
+  </div>
+</nav>

@@ -12,14 +12,12 @@ require_once("dashboardHeader.php");
 
 
 
-<container class="pageHolder">
 
-    <!-- <div class="signup-form background-graphic-dark"></div>
+<!-- <div class="signup-form background-graphic-dark"></div>
 
         <div class="signup-form background-graphic"> -->
-
-    </div>
-
+<br>
+<div class="outerform">
     <div class="preference-form">
         <div class="imgholder">
             <img src="img/IYC Logo.png" alt="" class="preflogo">
@@ -43,14 +41,14 @@ require_once("dashboardHeader.php");
             <input type="text" name="grade" placeholder="Grade" class="inputField">
             <input type="text" name="division" placeholder="Division (JNIS ONLY)" class="inputField">
             <textarea type="text" name="munXP" placeholder="MUN Experience" class="inputField long"></textarea>
-            <button class="submit inputField" type="submit" name="submit">Register</button>
+            <button class="submit inputField" type="submit" name="submit">Complete Registration</button>
             <p class="altAction"><a href="help.php"> Help</a> </p>
         </form>
 
 
 
     </div>
-</container>
+</div>
 </body>
 
 </html>

@@ -1,332 +1,452 @@
 * {
-    padding: 0px;
-    margin: 0px;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif;
 }
 
-p{
-    color: white;
+
+p {
+  color: white;
 }
+
 a {
-    text-decoration: none;
-    color: inherit;
-    font-size: inherit;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
 }
 
 body {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: black;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  background-image: url("../img/bg.svg");
+  background-attachment: fixed;
+}
+
+html {
+  height: 100%;
 }
 
 p {
-    text-align: center;
+  text-align: center;
 }
 
 .pageHolder {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .signup-form {
-    position: absolute;
-    background-color: rgba(255, 255, 255, .15);
-    backdrop-filter: blur(100px);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    box-shadow: white;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(100px);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  display: flex;
+  box-shadow: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .preference-form {
-    position: absolute;
-    background-color: rgba(255, 255, 255, .15);
-    backdrop-filter: blur(100px);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    box-shadow: white;
-    
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(100px);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  display: flex;
+  box-shadow: white;
+
 }
 
-.background-graphic {
-    position: relative;
-    padding: 200px;
-    background-color: rgb(127, 164, 177);
-    right: -30px;
-    top: 60px;
-    border-radius: 10px;
-}
-
-.background-graphic-dark {
-    position: relative;
-    padding: 200px;
-    background-color: darkblue;
-    right: 30px;
-    top: -60px;
-    border-radius: 10px;
+.outerform{
+  width:100%;
+  display: flex;
+  justify-content: center;
 }
 
 .signup {
-    display: inline-flex;
-    flex-direction: column;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-    width:250px;
-    
+  width: 9.625em;
+  height: auto;
 }
 
 .preflogo {
-    width:500px;
-    
+  width: 25rem;
 }
 
 .formTitle {
-    font-size: 30px;
-    padding-bottom: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color:white;
+  font-size: 1.875rem;
+  padding-bottom: 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
 }
 
 .imgholder {
-    display: flex;
-    background-color: rgb(56, 56, 56);
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
+  display: flex;
+  background-color: rgb(56, 56, 56);
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
 }
 
 .inputField {
-    padding: 20px;
-    margin: 5px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(44, 44, 44);
-    color: white;
-    width:300px;
+  padding: 1.25rem;
+  margin: 0.3125rem;
+  border-radius: 0.625rem;
+  border: none;
+  background-color: rgb(44, 44, 44);
+  color: white;
+  width: 18.75rem;
 }
 
-.inputField:focus{
-    background-color: white;
-    color: black;
+.inputField:focus {
+  background-color: white;
+  color: black;
 }
 
 .submit {
-    max-width: 50%;
-    background-color: transparent;
-    border: solid lightblue 3px;
-    margin-top: 10px;
-    color: lightblue;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  max-width: 50%;
+  background-color: transparent;
+  border: solid lightblue 3px;
+  margin-top: 0.625rem;
+  color: lightblue;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 
 .submit:hover {
-    background-color: lightblue;
-    color: black;
+  background-color: lightblue;
+  color: black;
 }
 
 ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 1;
-    /* Firefox */
-    font-size: 20px;
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+  font-size: 1.25rem;
 }
 
 :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: white;
-    font-size: 20px;
+  /* Internet Explorer 10-11 */
+  color: white;
+  font-size: 1.25rem;
 }
 
 ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: white;
-    font-size: 20px;
+  /* Microsoft Edge */
+  color: white;
+  font-size: 1.25rem;
 }
 
 .altAction {
-    padding-top: 10px;
-    font-size: 15px;
+  padding-top: 0.625rem;
+  font-size: 15px;
 }
 
-.mainNav {
-    display: flex;
-    background-color: black;
-    width: 100vw;
-    color: white;
+
+
+.registerFull {
+  margin-top: 0.625rem;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+  font-size: 1.25rem;
+  box-shadow: none;
+  color: white;
+  border-radius: 3rem;
+  border: 2px solid skyblue;
 }
 
-.navDiv{
-    flex-direction: row;
+.registerFull:hover {
+  background-color: skyblue;
+  color: black;
+}
+
+.display {
+  display: inline-flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 5px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.long {
+  height: 6.25rem;
+  padding: 1.25rem;
+  width: 18.56rem;
+}
+
+.prefInput {
+  padding: 1.25rem;
+  margin: 0.3125rem;
+  border-radius: 0.625rem;
+  border: none;
+  background-color: rgb(44, 44, 44);
+  color: white;
+  width: 37.5rem;
+}
+
+.item2 {
+  width: 9.375rem;
+}
+
+.prefInput:focus {
+  background-color: white;
+  color: black;
+}
+
+.resources {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* .profile{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/*Dashboard Nav*/
+
+/* [ON BIG SCREEN] */
+/* (A) WRAPPER */
+#hamnav {
+    background: #000;
+    margin-top: 0px;
+    padding-top: 0px;
+
+  }
+  
+  /* (B) HORIZONTAL MENU ITEMS */
+  #hamitems { display: flex; }
+  #hamitems a {
+    flex-grow: 1;
+    flex-basis: 0;
     padding: 10px;
-}
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+  #hamitems a:hover { background:skyblue; }
+  
+  /* (C) HIDE HAMBURGER */
+  #hamnav label, #hamburger { display: none; }
 
-.mainBody{
-    display: grid;
-    grid-template-columns: 330px 330px 330px 330px ;
-    justify-content:center;
-    background-color: black;
-    grid-gap:20px;
-    column-gap: 50px;
-    grid-template-areas: 
-        "status status status profile"
-        "resources resources resources profile"
-        "resources resources resources profile"
-        ;
-}
-
-.grid-item{
-    border-radius: 5px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: rgb(78, 78, 78);   
-    border:skyblue 10px solid;   
-}
-
-.registrationStatus{
-    grid-area: status;
-}
-
-.sectionLine{
-    width:100%;
-    background-color: black;
-}
-/* .sectionLine::after{
-    border-bottom: 3px solid black;
-    content: "Profile";
-} */
-
-.resources{
-    grid-area: resources;
-}
-
-.profile{
-    grid-area:profile;
-}
+  /* [ON SMALL SCREENS] */
+@media screen and (max-width: 768px){
+    /* (A) BREAK INTO VERTICAL MENU */
+    #hamitems a {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      border-top: 1px solid #333;
+    }
+    /* (B) SHOW HAMBURGER ICON */
+    #hamnav label { 
+      display: inline-block; 
+      color: white;
+      background: skyblue;
+      font-style: normal;
+      font-size: 1.2em;
+      padding: 10px;
+    }
+  
+    /* (C) TOGGLE SHOW/HIDE MENU */
+    #hamitems { display: none; }
+    #hamnav input:checked ~ #hamitems { display: block; };
+  }
 
 
-.statusField{
+/* Dashboard page */
+
+.contentHolder{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+}
+
+.container {
+    width: 100vw;
+    margin: none;
+    grid-gap: 2rem;
+
+}
+
+.gridItem {
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.144);
+    border: skyblue 3px solid;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+@media screen and (min-width: 1080px){
+    .container{
+        display: grid;
+        height: 90vh;
+        width: 80vw;
+        grid-template-columns: 1.2fr 0.7fr 1.2fr;
+        grid-template-rows: 0.3fr 0.3fr 1fr 1.4fr;
+        grid-template-areas: 
+        "registerStatus statusIndicator statusIndicator " 
+        "profile statusIndicator statusIndicator " 
+        "profile techManual conferenceLinks " 
+        "profile welcomeMessage welcomeMessage";
+        grid-gap: 1rem;
+        margin:auto;
+        color: white;
+    }
+
+    .gridItem{
+        margin-top: 0px;
+    }
+
+    
+}
+
+
+
+.blank{
+    grid-area: blank;
+}
+
+.registerStatus {
+  grid-area: registerStatus;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.indicator {
+  width: 7rem;
+  height: 7rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+.statusIndicators {
+  grid-area: statusIndicator;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  grid-area: profile;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.techManual {
+  grid-area: techManual;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.links {
+  grid-area: conferenceLinks;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.welcomeMessage {
+  grid-area: welcomeMessage;
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  align-items: stretch;
+  justify-content: space-around;
+  
+}
+
+/* Profile Section*/
+
+.demo {
+  border: 0.1rem solid #c0c0c0;
+  border-collapse: collapse;
+  padding: 0.5rem;
+  width: 100%;
+  height: 90%;
+}
+
+.demo th {
+  border: 0.1rem solid #c0c0c0;
+  padding: 0.2rem;
+}
+
+.demo td {
+  border: 0.1rem solid #c0c0c0;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+/* Welcome Message */
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.messageContent {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+/* Tech Manual*/
+
+.techpdf {
+  width: 4em;
+  height: auto;
+  padding: 1rem;
+}
+
+/*Status Indicators*/
+
+.statusInd{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
+ 
+
 }
 
 .status{
-    font-size: 25px;
-    color: white    ;
-    text-align: center;
-    
-}
-
-.green{
-    color:green;
-}
-
-.yellow{
-    color: orange;
-}
-
-.red{
-    color:red;
-}
-
-.indicator{
-    width: 150px;
-    height:150px;
-    margin:0px;
-    padding:0px;
-}
-
-.processing{
-    width: 10px;
-    height:10px;
-    margin:0px;
-    padding:0px;
-}
-
-.dashboard{
-    width:100vw;
-    height:100vh;
-
-}
-
-.registerFull {
-    background-color: grey;
-    margin-top: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    box-shadow: none;
-    color: black;
-}
-
-.display{
-    display: inline-flex;
-    flex-direction: column;
-    color:white;
-    border-radius: 5px;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-}
-
-.long{
-    height:100px;
-    padding:20px;
-    width:297px;
-}
-
-.prefInput {
-    padding: 20px;
-    margin: 5px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(44, 44, 44);
-    color: white;
-    width:600px;
-}
-
-.item2{
-    width:150px
-}
-
-.prefInput:focus{
-    background-color: white;
-    color: black;
-}
-
-.resources{
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    vertical-align: middle;
-}
-
- .table, th, td{
-    border: 1px solid white;
-    padding: 3px;
-    
-}
-
-.profile{
-    font-size: 20px;
-    font-weight: bold;
+  text-align: center;
 }

@@ -33,7 +33,7 @@ if(isset($_POST["submit"])){
 
     assignPreference($conn, $committee1, $country1a, $country1b, $country1c, $committee2, $country2a, $country2b, $country2c,$committee3, $country3a, $country3b, $country3c, $delId);
     
-    $data = getPreference($conn);
+    $data = getPreference($conn, $delId);
     print_r($data);
     
 
