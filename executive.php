@@ -96,7 +96,7 @@ $colNames = array_keys(reset($data));
                        $result = mysqli_query($conn, 'SELECT delId FROM delData');
 
                        while ($username = mysqli_fetch_assoc($result)){
-                           echo "<`option` value=".$username['delId'].">".$username['delId']."</`option`>";
+                           echo '<option value='.$username['delId'].'>'.$username['delId'].'</option>';
                            echo"test message"; 
                        }
                     ?>
