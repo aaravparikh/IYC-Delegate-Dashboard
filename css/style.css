@@ -8,6 +8,8 @@
 
 p {
   color: white;
+  padding: 0.1rem;
+  margin: 0.1rem;
 }
 
 a {
@@ -169,11 +171,15 @@ p {
   color: white;
   border-radius: 3rem;
   border: 2px solid skyblue;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .registerFull:hover {
   background-color: skyblue;
   color: black;
+
 }
 
 .display {
@@ -389,7 +395,7 @@ p {
   text-align: center;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
 }
 
 .links {
@@ -446,6 +452,38 @@ p {
   padding: 1rem;
 }
 
+/*conference Links*/
+
+.conferenceLinks{
+  border-collapse: separate;
+  border-spacing: 0.5rem 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+
+}
+
+.conferenceLinks th {
+  border: 0.1rem solid #c0c0c0;
+  padding: 0.2rem;
+}
+
+.conferenceLinks td {
+  border: 0.1rem solid #c0c0c0;
+  padding: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+
+
+}
+
+.conferenceLinks td:hover {
+  border: 0.1rem solid skyblue;
+  cursor: pointer;
+  background-color: skyblue;
+  color: black;
+
+}
+
 /*Status Indicators*/
 
 .statusInd{
@@ -457,4 +495,89 @@ p {
 
 .status{
   text-align: center;
+}
+
+/*MUN Tools Page*/
+
+.containerMUN{
+  height: 85vh;
+  width: 80vw;
+  margin: auto;
+  display: flex;
+}
+
+.chatItem{
+  background: rgba(255, 255, 255, 0.144);
+  border: skyblue 3px solid;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  padding: 1rem;
+  margin-top: 1rem;
+  color: white;
+  height: 100%;
+  width: 50%;
+  margin: 1rem;
+}
+
+
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+  
+.demoExec {
+  border: 0.1rem solid #c0c0c0;
+  border-collapse: collapse;
+  padding: 0.5rem;
+  height: auto;
+  color: white;
+  width:100%;
+  background-color: black;
+}
+
+.demoExec th {
+  border: 0.1rem solid #c0c0c0;
+  padding: 0.2rem;
+  position: sticky;
+}
+
+.demoExec td {
+  border: 0.1rem solid #c0c0c0;
+  padding: 0.2rem;
+  font-size: 1rem;
+
+}
+
+.execDisp{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+}
+
+.execInternal{
+  color: white;
+  display: flex;
+  margin: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.prominent{
+  width: 80%;
+}
+
+.execForm{
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(40px);
+  position:sticky;
 }
