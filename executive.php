@@ -113,7 +113,7 @@ $colNames = array_keys(reset($data));
                 <div>
                     <input type="text" name="country" placeholder="Assign Country" class="prefInput item2 ">
                 </div>
-                <button class="submit inputField" type="submit" name="submit">Assign</button>
+                <button class="submit inputField" type="submit" name="submit">Assign Changes</button>
         </div>
     </div>
 </div>
