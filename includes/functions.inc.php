@@ -191,6 +191,15 @@ function getPreference($conn, $delId){
     return $pId;
 }
 
+function assignCommittee($conn, $delId, $committee, $country){
+    $sql = "UPDATE deldata SET committee=?, country=? WHERE delId=?"; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("ssi", $committee, $country, $delId);
+    $stmt->execute();
+
+    header("location:../executive.php?error=none");
+}
+
 
 
 

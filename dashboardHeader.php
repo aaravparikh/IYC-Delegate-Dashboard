@@ -33,17 +33,17 @@ if ($delData !== null) {
 
   <div id="hamitems">
   
-    <a href="#"><?php
+    <a href="index.php#profile"><?php
         if (isset($_SESSION["delName"])) { 
             echo "Welcome, ".$_SESSION["delName"];
         } else {
             echo "Please Complete Registration";
         }
         ?> </a>
-    <a href="https://jnisiyc.com">Home</a>
     <a href="index.php">Dashboard</a>
     <a href="muntools.php">Resources</a>
     <a href="muntools.php">Chat</a>
+    <a href="https://jnisiyc.com">IYC Home</a>
     <a href="includes/logout.inc.php">Logout</a>
   </div>
 </nav>

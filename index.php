@@ -35,7 +35,7 @@ require_once("dashboardHeader.php");
                     </div>
                 </div>
             </div>
-            <div class="gridItem profile">
+            <div class="gridItem profile" id='profile'>
                 <p>Profile</p>
                 <?php
                 if (isset($_SESSION["delId"])) {
@@ -46,6 +46,7 @@ require_once("dashboardHeader.php");
                     $stmt->execute();
                     $result = $stmt->get_result(); // get the mysqli result
                     $pId = $result->fetch_assoc();
+                    $_SESSION["committee"] = $pId["committee"];
                     echo "
 
                 
@@ -101,60 +102,92 @@ require_once("dashboardHeader.php");
                 </a>
             </div>
             <div class="gridItem links">
-                <p>Conference Links</p><br>
-                <p>Coming Soon</p>
+
+                <?php
+                if (isset($_SESSION["paymentStatus"]) && $_SESSION["paymentStatus"] === 'complete') {
+                    echo "
+                        
+                        <table class='conferenceLinks'>
+                            <tr>
+                                <td colspan='2'> Opening Ceremony</td>
+                            </tr>
+                            <tr>
+                                <td> Session 1</td>
+                                <td> Session 2</td>
+                            </tr> 
+                            <tr>
+                                <td colspan='2'> Break </td>
+                            </tr>
+                            <tr>
+                                <td> Session 3</td>
+                                <td> Session 4</td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'> Break </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'> Night Crisis </td>
+                            </tr>
+                        </table>
+
+                    ";
+                } else {
+                    echo "<p>Please Register First</p>";
+                }
+                ?>
+
             </div>
-           
-           
+
+
             <div class="gridItem welcomeMessage">
 
-            <div class="statusInd">
-                <h6 class="status">Committee <br> Preference:</h6>
-            <?php if (isset($_SESSION["pId"])) {
-                echo "<p>Selected </p>
+                <div class="statusInd">
+                    <h6 class="status">Committee <br> Preference:</h6>
+                    <?php if (isset($_SESSION["pId"])) {
+                        echo "<p>Selected </p>
             <img src='img/complete.png' alt='green-tick' class='indicator complete'>";
-            } else if (isset($_SESSION["delId"])) {
-                echo "<p>Not Selected </p>
+                    } else if (isset($_SESSION["delId"])) {
+                        echo "<p>Not Selected </p>
             <img src='img/pending.png' alt='caution' class='indicator complete'>
             <a href='preference.php'>
             <div class='registerFull'> Select Preference </div>
             </a>";
-            } else {
-                echo "<p>Registration Incomplete</p>
+                    } else {
+                        echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
                 <a href='completeRegistration.php'>
                     <div class='registerFull'> Complete Registration </div>
                 </a>";
-            }
+                    }
 
-            ?>
+                    ?>
                 </div>
-                
+
                 <div class="statusInd">
-                <h6 class="status">Registration<br> Fees:</h6>
-            <?php if (isset($_SESSION["paymentStatus"])) {
-                if ($_SESSION["paymentStatus"] === "complete") {
-                    echo "<p>Paid </p>
+                    <h6 class="status">Registration<br> Fees:</h6>
+                    <?php if (isset($_SESSION["paymentStatus"])) {
+                        if ($_SESSION["paymentStatus"] === "complete") {
+                            echo "<p>Paid </p>
                    <img src='img/complete.png' alt='green-tick' class='indicator complete'>";
-                } else if ($_SESSION["paymentStatus"] === "processing") {
-                    echo "<p>Processing </p><br>
+                        } else if ($_SESSION["paymentStatus"] === "processing") {
+                            echo "<p>Processing </p><br>
                     <img src='img/processing.png' alt='processing' height='110px' width='110px'>";
-                } else {
-                    echo "<p>Pending </p>
+                        } else {
+                            echo "<p>Pending </p>
                     <img src='img/pending.png' alt='caution' class='indicator complete'>
                     <a href=' includes/payment.inc.php'>
                     <div class='registerFull'> Complete Payment </div>
                     </a>";
-                }
-            } else {
-                echo "<p>Registration Incomplete</p>
+                        }
+                    } else {
+                        echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
                 <a href='completeRegistration.php' method='POST' value = 'submit'>
                     <div class='registerFull'> Complete Registration </div>
                 </a>";
-            }
+                    }
 
-            ?>
+                    ?>
                 </div>
 
                 <div class='statusInd'>
@@ -188,6 +221,6 @@ require_once("dashboardHeader.php");
                 </div>
 
 
-            
-                
+
+
             </div>

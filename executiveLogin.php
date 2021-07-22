@@ -18,8 +18,8 @@
             <div class="imgholder">
                 <img src="img/IYC Logo.png" alt="" class="logo">
             </div>
-            <form action="includes/login.inc.php" class="signup" method="POST">
-                <h6 class="formTitle">Delegate Log In</h6>
+            <form action="includes/executiveLogin.inc.php" class="signup" method="POST">
+                <h6 class="formTitle">EB Log In</h6>
                 <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyInput") {
@@ -31,15 +31,14 @@
                     } else if ($_GET["error"] == "nonExistentUser") {
                         echo "<p>User does not exist. Please register instead</p>";
                     } else if ($_GET["error"]== "incorrectPassword"){
-                        echo "<p> Password Incorrect</p>";
+                        echo "<p> Username or Password Incorrect</p>";
                     }
                 }
                 ?>
-                <input type="text" name="email" placeholder="Email ID" class="inputField">
+                <input type="text" name="username" placeholder="Username" class="inputField">
                 <input type="password" name="pwd" placeholder="Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Log In</button>
-                <p class="altAction"><a href="register.php"> Register Instead? </a></p>
-                <p class="altAction"><a href="executiveLogin.php"> Executive Board </a></p>
+                <p class="altAction"><a href="login.php"> Delegate </a></p>
                 <p class="altAction"><a href="help.php"> Help</a> </p>
             </form>
         </div>
