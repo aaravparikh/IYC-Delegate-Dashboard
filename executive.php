@@ -92,14 +92,16 @@ $colNames = array_keys(reset($data));
                 ?>
                 <select name="delId"  class="prefInput" required="">
                     <option disabled="" selected="">Delegate ID [Refer to ID column] </option>
-                    <?php 
+                    <option value=<?php 
                        $result = mysqli_query($conn, 'SELECT delId FROM delData');
 
                        while ($username = mysqli_fetch_assoc($result)){
-                           echo '<option value='.$username['delId'].'>'.$username['delId'].'</option>';
-                           echo"test message"; 
+                           echo $username['delId'].'>'.$username['delId'].'</option>';
+                           echo"<option>"; 
                        }
                     ?>
+                    </option>
+                    
                     
                 </select>
                 
