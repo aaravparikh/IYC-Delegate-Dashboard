@@ -28,10 +28,14 @@ require_once("dashboardHeader.php");
             </div>
             <div class="gridItem statusIndicators">
                 <div class="message">
-                    <img src="img/IYC Logo.png" alt="" class="logo">
+                    <?php 
+                    ?>
+                    <img src='img/IYC Logo.png' alt='IYC' class='logo'>
 
-                    <div class="messageContent">
-                        <h7>Dear Delegates, blah blah blah IYC blah blah blah JNIS blah blah Delegate blah blah MUN blah </h7>
+                    <div class='messageContent'>
+                        <h7>Dear delegates, <br>
+                        Welcome to registration. <br>
+                        The decisions you make in this registration allow us to better understand your preferences in Committee & Country- at the diplomat's table, the rest of the world turns blurry- no country remains too small, or too insignificant.</h7>
                     </div>
                 </div>
             </div>

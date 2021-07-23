@@ -24,7 +24,7 @@ if(isset($_POST["submit"])){
     require_once 'functions.inc.php';
 
     if(emptyInputSignup($committee1, $country1a, $country1b ) !== false){
-        header("location: ../completeRegistration.php?error=emptyInput");
+        header("location: ../preference.php?error=emptyInput");
         exit();
     }
     
