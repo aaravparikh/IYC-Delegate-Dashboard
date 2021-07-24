@@ -8,6 +8,9 @@ require_once("dashboardHeader.php");
 
 </container>
 
+
+
+
 <div class="contentHolder">
     <div class="container">
         <div class="gridItem registerStatus">Registration Status<br>
@@ -208,11 +211,11 @@ require_once("dashboardHeader.php");
                     </a>";
                         } else {
                             echo "<p>Not Activated </p>
-                    <img src='img/pending.png' alt='caution' class='indicator complete'>
-                    <a href=' includes/discord.inc.php'>   
-                    <div class='registerFull'> Create Account </div>
-                    </a>";
-                        }
+                            <img src='img/pending.png' alt='caution' class='indicator complete'>
+                            <a class='trigger_popup_fricc'>   
+                            <div class='registerFull' onclick='pop.open('Title', 'Text')' value='Show'> Create Account </div>
+                            </a>";
+                        }   
                     } else {
                         echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
