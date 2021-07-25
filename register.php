@@ -27,7 +27,9 @@
                         echo "<p> Please enter valid email</p>";
                     } else if ($_GET["error"] == "pwdMatchError") {
                         echo "<p> Passwords do not match</p>";
-                    } else if ($_GET["error"] == "emailAlreadyRegistered") {
+                    }  else if ($_GET["error"] == "emailMatchError") {
+                        echo "<p> Email IDs do not match</p>";
+                    }  else if ($_GET["error"] == "emailAlreadyRegistered") {
                         echo "<p>This email has already been registered</p>";
                     } else if ($_GET["error"] == "stmtFailure") {
                         echo "<p>Something went wrong! Please try again or contact the tech team</p>";
@@ -37,6 +39,7 @@
                 }
                 ?>
                 <input type="text" name="email" placeholder="Email ID" class="inputField">
+                <input type="text" name="reEmail" placeholder="Re-enter Email ID" class="inputField">
                 <input type="password" name="pwd" placeholder="Password" class="inputField">
                 <input type="password" name="rePwd" placeholder="Re-enter Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Register</button>

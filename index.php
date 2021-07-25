@@ -31,14 +31,14 @@ require_once("dashboardHeader.php");
             </div>
             <div class="gridItem statusIndicators">
                 <div class="message">
-                    <?php 
+                    <?php
                     ?>
                     <img src='img/IYC Logo.png' alt='IYC' class='logo'>
 
                     <div class='messageContent'>
                         <h7>Dear delegates, <br>
-                        Welcome to registration. <br>
-                        The decisions you make in this registration allow us to better understand your preferences in Committee & Country- at the diplomat's table, the rest of the world turns blurry- no country remains too small, or too insignificant.</h7>
+                            Welcome to registration. <br>
+                            The decisions you make in this registration allow us to better understand your preferences in Committee & Country- at the diplomat's table, the rest of the world turns blurry- no country remains too small, or too insignificant.</h7>
                     </div>
                 </div>
             </div>
@@ -215,7 +215,7 @@ require_once("dashboardHeader.php");
                             <a class='trigger_popup_fricc'>   
                             <div class='registerFull' onclick='pop.open('Title', 'Text')' value='Show'> Create Account </div>
                             </a>";
-                        }   
+                        }
                     } else {
                         echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
