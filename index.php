@@ -11,6 +11,7 @@ require_once("dashboardHeader.php");
 
 
 
+
 <div class="contentHolder">
     <div class="container">
         <div class="gridItem registerStatus">Registration Status<br>
@@ -206,13 +207,13 @@ require_once("dashboardHeader.php");
                         } else if ($_SESSION["discordStatus"] === "clicked") {
                             echo "<p>Chat Not Joined </p><br>
                     <img src='img/processing.png' alt='processing' height='110px' width='110px'>
-                    <a href=' includes/discord.inc.php'>    
+                    <a href='#openPopup'>    
                     <div class='registerFull'> Join Chat </div>
                     </a>";
                         } else {
                             echo "<p>Not Activated </p>
                             <img src='img/pending.png' alt='caution' class='indicator complete'>
-                            <a class='trigger_popup_fricc'>   
+                            <a href='#openPopup'>   
                             <div class='registerFull' onclick='pop.open('Title', 'Text')' value='Show'> Create Account </div>
                             </a>";
                         }
@@ -226,6 +227,8 @@ require_once("dashboardHeader.php");
 
                     ?>
                 </div>
+
+               
 
 
 

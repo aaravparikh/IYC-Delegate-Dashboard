@@ -1,24 +1,59 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Test Page </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <iframe src="https://titanembeds.com/embed/765522979806511104?fixedsidenav=true" height="800px" width="800px" frameborder="0"></iframe>
-        
-        <script src="" async defer></script>
-    </body>
+  <style>
+    .myPopup {
+      position: relative;
+      opacity: 0;
+      -webkit-transition: opacity 400ms ease-in;
+      -moz-transition: opacity 400ms ease-in;
+      transition: opacity 400ms ease-in;
+    }
+    .myPopup:target {
+      opacity: 1;
+    }
+    .myPopup > div {
+      width: 400px;
+      position: relative;
+      margin: 10% auto;
+      padding: 5px 20px 13px 20px;
+      border-radius: 10px;
+      background: #71a6fc;
+      background: -moz-linear-gradient(#71a6fc, #fff);
+      background: -webkit-linear-gradient(#71a6fc, #999);
+    }
+    .close {
+      background: #606061;
+      color: #ffffff;
+      line-height: 25px;
+      position: absolute;
+      right: -12px;
+      text-align: center;
+      top: -10px;
+      width: 24px;
+      text-decoration: none;
+      -webkit-border-radius: 12px;
+      -moz-box-shadow: 1px 1px 3px #000;
+    }
+    .close:hover {
+      background: #00d9ff;
+    }
+  </style>
+  <head>
+    <title>Wikitechy Html5 Popup Window</title>
+    <link rel="stylesheet" type="text/css" href="subs-style.css" />
+  </head>
+  <body>
+    <h2>Html5 Popup Window</h2>
+    <a href="#openPopup">Open Popup</a>
+    <div id="openPopup" class="myPopup">
+      <div>
+        <a href="#close" title=" Close" class="close">X</a>
+        <h2>POPUP WINDOW</h2>
+        <p>Hello!</p>
+        <p>
+          Welcome to Wikitechy this is a popup window created using HTML and CSS
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
