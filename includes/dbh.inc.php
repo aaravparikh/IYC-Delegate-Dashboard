@@ -7,7 +7,7 @@ $dbName="iyc2021"; */
 
 $servername="localhost";
 $dbUsername="u429279072_iyc";
-$dbPassword="InternationalYouth2021";
+$dbPassword="2y!0?ng/0]Fd";
 $dbName="u429279072_iyc2021";  
  
 $conn = mysqli_connect($servername,$dbUsername,$dbPassword,$dbName);
