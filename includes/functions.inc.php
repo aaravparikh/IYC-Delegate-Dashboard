@@ -200,6 +200,39 @@ function assignCommittee($conn, $delId, $committee, $country){
     header("location:../executive.php?error=none");
 }
 
+function assignFinance($conn, $userId, $delName, $status){
+    $sql = "UPDATE deldata SET paymentStatus=? WHERE userId=?"; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("si", $status, $userId);
+    $stmt->execute();
+
+    header("location:../finance.php?error=none");
+}
+
+function resetFinance($conn){
+
+    $result = mysqli_query($conn, "SELECT userId FROM deldata WHERE paymentStatus='processing'");
+    print_r($result);
+
+    foreach($result as $userId){
+        $status="pending";
+        $sql = "UPDATE deldata SET paymentStatus=? WHERE userId=?"; // SQL with parameters
+        $stmt = $conn->prepare($sql); 
+        $stmt->bind_param("si", $status,$userId["userId"]);
+        $stmt->execute();
+    }
+    unset($userId);
+
+
+/* 
+
+    $sql = "UPDATE deldata SET paymentStatus=? WHERE peymentStatus=?"; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("ss", "pending", "processing");
+    $stmt->execute(); */
+
+     header("location:../finance.php?error=none");
+}
 
 
 

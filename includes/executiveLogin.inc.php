@@ -15,10 +15,15 @@ if(isset($_POST["submit"])){
         header("location: ../executiveLogin.php?error=emptyInput");
         exit();
     }
+    else if($username == "finance@jnisiyc.com" AND $pwd == "JNISMoney@2021"){
+        $_SESSION["validExec"] = $true;
+        header("location:../finance.php");
+    }
 
     else if($username != "executive@jnisiyc.com" || $pwd != "JNISExec@2021"){
         header("location:../executiveLogin.php?error=incorrectPassword");
     }
+
     else{
         $_SESSION["validExec"] = $true;
         header("location: ../executive.php");
