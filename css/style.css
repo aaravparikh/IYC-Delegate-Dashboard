@@ -81,6 +81,8 @@ h7{
   padding: 0.5rem;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  position: -webkit-sticky;
 }
 
 .logo {
