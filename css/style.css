@@ -548,7 +548,7 @@ max-width: 240px;
   padding: 0.5rem;
   height: auto;
   color: white;
-  width:100%;
+  width:50%;
   background-color: black;
 }
 
@@ -556,12 +556,15 @@ max-width: 240px;
   border: 0.1rem solid #c0c0c0;
   padding: 0.2rem;
   position: sticky;
+  max-width: 250px;
 }
 
 .demoExec td {
   border: 0.1rem solid #c0c0c0;
   padding: 0.2rem;
   font-size: 1rem;
+  word-wrap: break-word;
+  max-width: 200px;
 
 }
 
@@ -575,7 +578,7 @@ max-width: 240px;
 .execInternal{
   color: white;
   display: flex;
-  margin: 1.5rem;
+  margin: 0.5rem;
   justify-content: center;
   align-items: center;
 }
