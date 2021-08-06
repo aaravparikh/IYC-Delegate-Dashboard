@@ -35,7 +35,7 @@ require_once("dashboardHeader.php");
                 }
             }
             ?>
-            <input type="text" name="name" placeholder="Name" class="inputField">
+            <input type="text" name="name" placeholder="Full Name" class="inputField">
             <input type="text" name="mobile" placeholder="Mobile Number" class="inputField">
             <input type="text" name="school" placeholder="School Name" class="inputField">
             <input type="text" name="grade" placeholder="Grade" class="inputField">
