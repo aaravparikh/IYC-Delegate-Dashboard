@@ -107,7 +107,7 @@ function createUser($conn, $email, $pwd)
     mysqli_stmt_bind_param($stmt, "ss", $email, $pwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt); 
-    header("location:../login.php");
+    header("location:../login");
 }
 
 function completeRegistration($conn, $name, $mobile, $school, $grade, $division, $munXP, $userId)
@@ -164,7 +164,7 @@ function loginUser($conn, $email, $pwd){
         session_start();
         $_SESSION["userId"] = $emailExists["userId"];
         $_SESSION["email"] = $email;
-        header("location:../index.php");
+        header("location:../index");
         exit();
     }
 

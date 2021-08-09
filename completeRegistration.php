@@ -1,7 +1,7 @@
 <?php
 include_once("header.php");
 if (!isset($_SESSION["userId"])) {
-    header("location:register.php");
+    header("location:register");
 }
 
 

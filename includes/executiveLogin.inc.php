@@ -26,10 +26,10 @@ if(isset($_POST["submit"])){
 
     else{
         $_SESSION["validExec"] = $true;
-        header("location: ../executive.php");
+        header("location: ../executive");
     }
 }
 else{
-    header("location: ../executiveLogin.php");
+    header("location: ../executiveLogin");
     exit();
 }

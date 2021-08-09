@@ -22,7 +22,7 @@ require_once("dashboardHeader.php");
                 } else {
                     echo "<p>Pending </p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
-                <a href='completeRegistration.php'>
+                <a href='completeRegistration'>
                 <div class='registerFull'> Complete Registration </div>
             </a></div>";
                 }
@@ -157,13 +157,13 @@ require_once("dashboardHeader.php");
                     } else if (isset($_SESSION["delId"])) {
                         echo "<p>Not Selected </p>
             <img src='img/pending.png' alt='caution' class='indicator complete'>
-            <a href='preference.php'>
+            <a href='preference'>
             <div class='registerFull'> Select Preference </div>
             </a>";
                     } else {
                         echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
-                <a href='completeRegistration.php'>
+                <a href='completeRegistration'>
                     <div class='registerFull'> Complete Registration </div>
                 </a>";
                     }
@@ -191,7 +191,7 @@ require_once("dashboardHeader.php");
                     } else {
                         echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
-                <a href='completeRegistration.php' method='POST' value = 'submit'>
+                <a href='completeRegistration' method='POST' value = 'submit'>
                     <div class='registerFull'> Complete Registration </div>
                 </a>";
                     }
@@ -221,7 +221,7 @@ require_once("dashboardHeader.php");
                     } else {
                         echo "<p>Registration Incomplete</p>
                 <img src='img/pending.png' alt='caution' class='indicator complete'>
-                <a href='completeRegistration.php' method='POST' value = 'submit'>
+                <a href='completeRegistration' method='POST' value = 'submit'>
                     <div class='registerFull'> Complete Registration </div>
                 </a>";
                     }

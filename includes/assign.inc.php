@@ -39,6 +39,6 @@ if(isset($_POST["submit"])){
 
 }
 else{
-    header("location: ../completeRegistration.php");
+    header("location: ../completeRegistration");
     exit();
 }

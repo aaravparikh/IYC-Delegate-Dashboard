@@ -29,6 +29,6 @@ if(isset($_POST["submit"])){
     resetFinance($conn);
 }
 else{
-    header("location: ../completeRegistration.php");
+    header("location: ../completeRegistration");
     exit();
 }
