@@ -179,7 +179,8 @@ require_once("dashboardHeader.php");
                    <img src='img/complete.png' alt='green-tick' class='indicator complete'>";
                         } else if ($_SESSION["paymentStatus"] === "processing") {
                             echo "<p>Processing </p><br>
-                    <img src='img/processing.png' alt='processing' height='110px' width='110px'>";
+                    <img src='img/processing.png' alt='processing' height='110px' width='110px'>
+                    <p> Please wait while<br> our finance team <br> confirms your payment</p>";
                         } else {
                             echo "<p>Pending </p>
                     <img src='img/pending.png' alt='caution' class='indicator complete'>

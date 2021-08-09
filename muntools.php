@@ -11,8 +11,9 @@ require_once("dashboardHeader.php");
 <div class="containerMUN">
         <div class="chatItem chatBoard">
            
-                <iframe class= 'responsive-iframe'src="https://titanembeds.com/embed/866523131408810024?theme=DiscordDark" frameborder="0"></iframe>
-
+<!--                 <iframe class= 'responsive-iframe'src="https://titanembeds.com/embed/866523131408810024?theme=DiscordDark" frameborder="0"></iframe>
+ -->
+                <h6> Delegate chat will be activated soon  </h6>
         
         </div>
         <div class="chatItem resources">
