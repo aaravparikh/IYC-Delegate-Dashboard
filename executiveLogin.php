@@ -38,7 +38,7 @@
                 <input type="text" name="username" placeholder="Username" class="inputField">
                 <input type="password" name="pwd" placeholder="Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Log In</button>
-                <p class="altAction"><a href="login.php"> Delegate </a></p>
+                <p class="altAction"><a href="login"> Delegate </a></p>
                 <p class="altAction"><a href="help.php"> Help</a> </p>
             </form>
         </div>

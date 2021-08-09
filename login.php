@@ -38,8 +38,8 @@
                 <input type="text" name="email" placeholder="Email ID" class="inputField">
                 <input type="password" name="pwd" placeholder="Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Log In</button>
-                <p class="altAction"><a href="register.php"> Register Instead? </a></p>
-                <p class="altAction"><a href="executiveLogin.php"> Executive Board </a></p>
+                <p class="altAction"><a href="register"> Register Instead? </a></p>
+                <p class="altAction"><a href="executiveLogin"> Executive Board </a></p>
                 <p class="altAction"><a href="help.php"> Help</a> </p>
             </form>
         </div>

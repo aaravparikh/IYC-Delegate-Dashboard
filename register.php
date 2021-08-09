@@ -43,7 +43,7 @@
                 <input type="password" name="pwd" placeholder="Password" class="inputField">
                 <input type="password" name="rePwd" placeholder="Re-enter Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Register</button>
-                <p class="altAction"><a href="login.php"> Log In Instead? </a></p>
+                <p class="altAction"><a href="login"> Log In Instead? </a></p>
                 <p class="altAction"><a href="help.php"> Help</a> </p>
             </form>
 

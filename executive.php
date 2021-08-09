@@ -10,7 +10,7 @@ require_once 'header.php';
 
 
 if(!isset($_SESSION["validExec"])){
-    header("location:index.php");
+    header("location:index");
 }
 
 
