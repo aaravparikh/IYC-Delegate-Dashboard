@@ -40,7 +40,7 @@
                 <button class="submit inputField" type="submit" name="submit">Log In</button>
                 <p class="altAction"><a href="register"> Register Instead? </a></p>
                 <p class="altAction"><a href="executiveLogin"> Executive Board </a></p>
-                <p class="altAction"><a href="help.php"> Help</a> </p>
+                <p class="altAction"><a href="mailto:aarav.parikh@jnis.ac.in"> Help</a> </p>
             </form>
         </div>
     </container>

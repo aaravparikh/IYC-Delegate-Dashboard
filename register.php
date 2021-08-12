@@ -44,7 +44,7 @@
                 <input type="password" name="rePwd" placeholder="Re-enter Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Register</button>
                 <p class="altAction"><a href="login"> Log In Instead? </a></p>
-                <p class="altAction"><a href="help.php"> Help</a> </p>
+                <p class="altAction"><a href="mailto:aarav.parikh@jnis.ac.in"> Help</a> </p>
             </form>
 
 

@@ -31,9 +31,11 @@ if (!isset($_SESSION["userId"])) {
                         echo "<p>Something went wrong! Please try again or contact the tech team</p>";
                     } else if ($_GET["error"] == "invalidMobile") {
                         echo "<p> Please enter valid mobile number</p>";
+                    } else if ($_GET["error"] == "gmc") {
+                        echo "<p>Select 1st preference as GMC<br>Enter media house preference in space for country<br> Leave other fields blank</p>";
                     }
                 }
-                ?>
+                ?><br>
                 <select name="committee1"  class="prefInput" required="">
                     <option disabled="" selected="">1st Preference [Committee] </option>
                     <option value="g8">G8</option>
@@ -77,7 +79,8 @@ if (!isset($_SESSION["userId"])) {
                 </div>  
                 <br>
                 <button class="submit inputField" type="submit" name="submit">Assign</button>
-                <p class="altAction"><a href="help.php"> Help</a> </p>
+                <p class="altAction"><a href="preference.php?error=gmc"> For GMC Delegates</a> </p>
+                <p class="altAction"><a href="mailto:aarav.parikh@jnis.ac.in"> Help</a> </p>
             </form>
         </div>
 
