@@ -234,6 +234,36 @@ function resetFinance($conn){
      header("location:../finance.php?error=none");
 }
 
+function passwordReset($conn, $email, $pwd){
+    $emailExists = emailExists($conn, $email);
+
+    if($emailExists === false){
+        header("location: ../register.php?error=nonExistentUser");
+        exit();
+    }
+
+    $dbPass = $emailExists["userPwd"];
+
+    echo $dbPass;
+
+   if($pwd!==$dbPass){
+        
+        $sql = "UPDATE users SET userPwd=? WHERE userEmail=?"; // SQL with parameters
+        $stmt = $conn->prepare($sql); 
+        $stmt->bind_param("ss", $pwd, $email);
+        $stmt->execute();
+        header("location:../passwordReset.php?error=none");
+        
+    }
+    else if($dbPass==$pwd){
+        session_start();
+        $_SESSION["userId"] = $emailExists["userId"];
+        $_SESSION["email"] = $email;
+        header("location:../index");
+        exit();
+    } 
+
+}
 
 
 

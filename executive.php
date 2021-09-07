@@ -20,6 +20,7 @@ $pId = array();
 
 
 $sql = "SELECT  deldata.delId AS ID, 
+                deldata.delName as DelegateName,
                 deldata.delGrade AS Grade, 
                 deldata.delMunXP AS Experience,
                 CONCAT(committee,' | ',country) AS Assigned, 
