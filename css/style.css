@@ -547,11 +547,11 @@ max-width: 240px;
 .demoExec {
   border: 0.1rem solid #c0c0c0;
   border-collapse: collapse;
-  padding: 0.5rem;
   height: auto;
   color: white;
   width:50%;
   background-color: black;
+  font-size: 10px;
 }
 
 .demoExec th {
@@ -559,6 +559,8 @@ max-width: 240px;
   padding: 0.2rem;
   position: sticky;
   max-width: 250px;
+  font-size: 15px;
+
 }
 
 .demoExec td {
@@ -567,6 +569,8 @@ max-width: 240px;
   font-size: 1rem;
   word-wrap: break-word;
   max-width: 200px;
+  font-size: 15px;
+
 
 }
 

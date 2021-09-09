@@ -76,7 +76,7 @@ $colNames = array_keys(reset($data));
     <div class='execInternal' >
         <div class='execForm'>
         <form action="includes/execAssign.inc.php" class="signup" method="POST">
-                <h6 class="formTitle">EB Log In</h6>
+                <h6 class="formTitle">Delegate Assignment</h6>
                 <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyInput") {
