@@ -40,7 +40,7 @@
                     }
                 }
                 ?>
-                <p> Password Reset for pan***di.m***n@jnis.ac.in </p>
+                <p> Password Reset for  </p>
                 <input type="password" name="pwd" placeholder="Password" class="inputField">
                 <input type="password" name="rePwd" placeholder="Re-enter Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Reset</button>
