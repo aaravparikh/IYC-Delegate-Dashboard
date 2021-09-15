@@ -9,6 +9,7 @@ if (!isset($_SESSION["userId"])) {
     header("location:register");
 }
 
+
 $delData = getStatus($conn);
 
 

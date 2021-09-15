@@ -5,6 +5,27 @@
   font-family: "Montserrat", sans-serif;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+  height:5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: skyblue;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 p {
   color: white;
@@ -529,6 +550,8 @@ max-width: 240px;
   height: 100%;
   width: 50%;
   margin: 1rem;
+  overflow:scroll;
+  overflow-x: hidden;
 }
 
 
@@ -719,4 +742,117 @@ max-width: 240px;
 }
 .close:hover {
   background: #00d9ff;
+}
+
+.chatItem{
+  height: inherit;
+}
+
+div.chatTabs{
+  overflow: scroll;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.chatGroups{
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  border: 2px solid skyblue;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+}
+
+.chatGroups:hover{
+  background-color: skyblue;
+  color: black;
+}
+
+.chatContent{
+  display: none;
+  padding: 6px 12px;
+  margin-top: 5px;
+}
+
+.chatContent:target {
+  display: block;
+}
+
+.chatWindow{
+  display: flex;
+  flex-direction: column;
+}
+
+.chatMessage{
+  background-color: rgba(255, 255, 255, 1);;
+  color: black;
+  margin: 5px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  width: fit-content;
+  max-width: 80%;
+}
+
+.chatMessageSelf{
+  background-color: skyblue;
+  color: black;
+  margin: 5px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  max-width: 80%;
+}
+
+.leftMeta{
+  font-size: 10px;
+  margin: 0;
+}
+
+.auth{
+  font-size:15px;
+  font-weight: bold;
+}
+
+.scrollDiv{
+  background-color: black;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.userInput{
+  width: 100%;
+  display: flex;
+}
+
+.chatBox{
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+}
+
+.chatSend{
+  width: auto;
+  margin-left: auto;
+  padding: 5px;
+  margin: 5px;
+}
+
+.chatBox::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgrey;
+  opacity: 1; /* Firefox */
+}
+
+.chatBox:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: lightgrey;
+}
+
+.chatBox  ::-ms-input-placeholder { /* Microsoft Edge */
+  color: lightgrey;
 }

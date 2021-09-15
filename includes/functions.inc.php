@@ -261,9 +261,69 @@ function passwordReset($conn, $email, $pwd){
         $_SESSION["email"] = $email;
         header("location:../index");
         exit();
-    } 
+    }
+}
+
+function getChats($conn, $committee){
+        $sql = "SELECT country FROM deldata WHERE committee=?"; // SQL with parameters
+        $stmt = $conn->prepare($sql); 
+        $stmt->bind_param("s", $committee);
+        $stmt->execute();
+        $result = $stmt->get_result(); // get the mysqli result
+        return $result;
 
 }
 
+function getGroupChatContent($conn, $committee, $country){
+    $sql = "SELECT * FROM chat WHERE receiverCountry=? AND receiverCommittee=?"; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("ss", $country, $committee);
+    $stmt->execute();
+    $result = $stmt->get_result(); // get the mysqli result
+    if(mysqli_num_rows($result)>0){
+        while($row = $result->fetch_assoc()){
+            if($row["author"] != $_SESSION["country"]){
+              print '<div class="chatMessage"><span class="auth">'.$row["author"].'</span><br>'.$row["message"].'<br><span class=leftMeta>'.$row["timeSent"].'</span></div>';
+          }else{
+            print '<div class="chatMessageSelf"><span class="auth">'.$row["author"].'</span><br>'.$row["message"].'<br><span class=leftMeta>'.$row["timeSent"].'</span></div>';
+          }
+        }  }else{
+            print 'There are no messages';
+        }
+}
+
+function sendMessage($conn, $author, $receiverCommittee, $receiverCountry, $message){
+ 
+    $sql = "INSERT INTO chat  ( author, receiverCommittee, receiverCountry, `message`) VALUES (?,?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location:../muntools?error=stmtFailure");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ssss", $author, $receiverCommittee, $receiverCountry, $message);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt); 
+    header("location:muntools".$_SESSION["position"]);
+
+}
+
+function getChatContent($conn, $committee, $country1, $country2){
+    $sql = "SELECT * FROM chat WHERE (author=? AND receiverCountry=? AND receiverCommittee=?) OR (receiverCountry=? AND author=? AND receiverCommittee=?)"; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("ssssss", $country1, $country2,$committee, $country1, $country2, $committee);
+    $stmt->execute();
+    $result = $stmt->get_result(); // get the mysqli result
+    if(mysqli_num_rows($result)>0){
+        while($row = $result->fetch_assoc()){
+            if($row["author"] != $_SESSION["country"]){
+              print '<div class="chatMessage"><span class="auth">'.$row["author"].'</span><br>'.$row["message"].'<br><span class=leftMeta>'.$row["timeSent"].'</span></div>';
+          }else{
+            print '<div class="chatMessageSelf"><span class="auth">'.$row["author"].'</span><br>'.$row["message"].'<br><span class=leftMeta>'.$row["timeSent"].'</span></div>';
+          }
+        }  }else{
+            print 'There are no messages';
+        } 
+}
 
 
