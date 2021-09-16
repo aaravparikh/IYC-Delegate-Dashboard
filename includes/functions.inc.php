@@ -272,6 +272,16 @@ function getChats($conn, $committee){
         $result = $stmt->get_result(); // get the mysqli result
         return $result;
 
+
+}
+
+function checkRead($conn, $committee, $country){
+    $sql2 = "SELECT * FROM chat WHERE receiverCommittee=? AND author=? AND receiverCountry=?"; // SQL with parameters
+    $stmt2 = $conn->prepare($sql2); 
+    $stmt2->bind_param("sss", $committee, $country, $_SESSION["country"]);
+    $stmt2->execute();
+    $result2 = $stmt2->get_result(); // get the mysqli result
+    return $result2;
 }
 
 function getGroupChatContent($conn, $committee, $country){
@@ -292,19 +302,20 @@ function getGroupChatContent($conn, $committee, $country){
         }
 }
 
-function sendMessage($conn, $author, $receiverCommittee, $receiverCountry, $message){
+function sendMessage($conn, $author, $receiverCommittee, $receiverCountry, $message ){
  
-    $sql = "INSERT INTO chat  ( author, receiverCommittee, receiverCountry, `message`) VALUES (?,?,?,?);";
+    $sql = "INSERT INTO chat  ( author, receiverCommittee, receiverCountry, `message`, `messageRead`) VALUES (?,?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location:../muntools?error=stmtFailure");
-        exit();
+       header("location:../muntools?error=stmtFailure");       
+exit();
     }
-
-    mysqli_stmt_bind_param($stmt, "ssss", $author, $receiverCommittee, $receiverCountry, $message);
+    $read="0";
+    mysqli_stmt_bind_param($stmt, "ssssi", $author, $receiverCommittee, $receiverCountry, $message, $read);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt); 
-    header("location:muntools".$_SESSION["position"]);
+    
+
 
 }
 
@@ -326,4 +337,37 @@ function getChatContent($conn, $committee, $country1, $country2){
         } 
 }
 
+function fetchChat($conn, $committee, $author, $receiver){
+    $sql = "SELECT * FROM chat WHERE (author=? AND receiverCountry=? AND receiverCommittee=?) "; // SQL with parameters
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("sss", $author, $receiver,$committee);
+    $stmt->execute();
+    $result = $stmt->get_result(); // get the mysqli result
+    if(mysqli_num_rows($result)>0){
+        while($row = $result->fetch_assoc()){
+            if($row["author"] != $_SESSION["country"]){
+              print '<div class="chatMessage"><span class="auth">'.$row["author"].'</span><br>'.$row["message"].'<br><span class=leftMeta>'.$row["timeSent"].'</span></div>';
+          }else{
+            print '<div class="chatMessageSelf"><span class="auth">'.$row["author"].'</span><br>'.$row["message"].'<br><span class=leftMeta>'.$row["timeSent"].'</span></div>';
+          }
+        }  }else{
+            print 'There are no messages';
+        } 
+}
+
+function markRead($conn, $mId){
+    $sql = "UPDATE  chat SET messageRead =? WHERE mId=?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+       header("location:../muntools?error=stmtFailure");       
+exit();
+    }
+    $read="1";
+    mysqli_stmt_bind_param($stmt, "ii",$read, $mId);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt); 
+    
+
+
+}
 

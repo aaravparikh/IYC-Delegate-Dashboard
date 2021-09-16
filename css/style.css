@@ -856,3 +856,7 @@ div.chatTabs{
 .chatBox  ::-ms-input-placeholder { /* Microsoft Edge */
   color: lightgrey;
 }
+
+.unreadChat{
+  background-color: red;
+}

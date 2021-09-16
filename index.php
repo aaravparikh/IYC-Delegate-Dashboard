@@ -108,33 +108,40 @@ require_once("dashboardHeader.php");
                     <img src="img/pdf.png" class='techpdf' alt=""><br>
                     IYC Tech Manual.pdf
                 </a>
+                <br>
+                Conference Schedule
+                <a href="resources/conferenceSchedule.pdf">
+                <img src="img/pdf.png" class='techpdf' alt=""><br>
+                    IYC Conference Schedule.pdf
+                </a>
             </div>
             <div class="gridItem links">
 
                 <?php
                 if (isset($_SESSION["paymentStatus"]) && $_SESSION["paymentStatus"] === 'complete') {
                     echo "
-                        
+                        Conference Links and Schedule [Day 1]
                         <table class='conferenceLinks'>
                             <tr>
-                                <td colspan='2'> Opening Ceremony</td>
+                                <td colspan='2'> Opening Ceremony<br> [9:00 am to 10:00 am]</td>
                             </tr>
                             <tr>
-                                <td> Session 1</td>
-                                <td> Session 2</td>
+                                <td colspan='2'> Break <br>[10:00 am to 10:30 am]</td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'> Chairs' Address<br> [10:30 am to 11:00 am]</td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'> Session 1 <br>[11:00 am to 1:00 pm]</td>
                             </tr> 
                             <tr>
-                                <td colspan='2'> Break </td>
+                                <td colspan='2'> Lunch <br>[1:00 pm to 2:00 pm]</td>
+                            </tr> 
+                            <tr>
+                                <td colspan='2'> Session 2 <br>[2:00 pm to 4:00 pm] </td>
                             </tr>
                             <tr>
-                                <td> Session 3</td>
-                                <td> Session 4</td>
-                            </tr>
-                            <tr>
-                                <td colspan='2'> Break </td>
-                            </tr>
-                            <tr>
-                                <td colspan='2'> Night Crisis </td>
+                                <td colspan='2'> Night Crisis <br> [6:30 pm to 8:30 pm] </td>
                             </tr>
                         </table>
 
@@ -229,7 +236,7 @@ require_once("dashboardHeader.php");
                     ?>
                 </div>
 
-               
+
 
 
 

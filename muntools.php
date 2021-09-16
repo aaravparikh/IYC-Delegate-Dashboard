@@ -4,28 +4,34 @@ require_once("dashboardHeader.php");
 
 ?>
 <script type="text/javascript">
-  /*    $(document).ready(function(){
+/*      $(document).ready(function(){
     function refreshData(){
+      var session;
+      $.ajaxSetup({cache: false})
+      $.get('position.php', function (data) {
+      session = data;});
       var display = document.getElementById("content");
       var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET", "chat.php");
+      xmlhttp.open("GET", "muntools#".session);
       xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xmlhttp.send();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
           display.innerHTML = this.responseText;
-          setTimeout(refreshData(), 3000);
+          setTimeout(refreshData(), 1000);
         } else {
-          setTimeout(refreshData(), 3000);
+          setTimeout(refreshData(), 1000);
 
         };
       }
     } 
 
    refreshData();
-  });  */
-
+  });   */
   
+  
+
+
 
   function submitForm() {
     var message = $("#message").val();
@@ -35,6 +41,9 @@ require_once("dashboardHeader.php");
     $('#chatForm')[0].reset();
   }
 
+  
+
+
 </script>
 
 
@@ -43,22 +52,40 @@ require_once("dashboardHeader.php");
 
 <div class="containerMUN">
   <div class="chatItem chatBoard">
-    <p>Delegate chat for <?php echo $_SESSION["committee"] ?></p>
-    <div class="chatTabs">
+   <?php if(isset($_SESSION["delName"])){ echo '<p>Delegate chat for '.strtoupper($_SESSION["committee"]);} else{ echo '<p>Please Complete Registration</p>';} ?></p>
+   <div class="chatTabs">
+   <?php
+      if(isset($_SESSION["committee"])){ echo '
       <a class="chatGroups" href="#fullCommittee">Full Committee</a>
       <a class="chatGroups" href="#executiveBoard">Executive Board</a>
       <a class="chatGroups" href="#moderator">Moderator|Rapporteur</a>
-      <a class="chatGroups" href="#secretariat">Secretariat</a>
+      <a class="chatGroups" href="#secretariat">Secretariat</a>';}?>
       <?php
-      $chatList = getChats($conn, $_SESSION["committee"]);
-
+      if(isset($_SESSION["committee"])){
+      $chatList = getChats($conn, $_SESSION["committee"]); 
       while ($row = $chatList->fetch_assoc()) {
         foreach ($row as $r) {
-          if($r == $_SESSION["country"]){
+          $readReceipt = checkRead($conn, $_SESSION["committee"], $r); 
+          $temp= $readReceipt->fetch_assoc();
+          $x= preg_replace('/\s+/', '', $r);
+          if(isset($temp["mId"])){
+            $_SESSION[$x] = $temp["mId"];
+          }
+          if(isset($temp["messageRead"])){
+            if($temp["messageRead"]==0){
+            if($x == $_SESSION["country"]){
+            }else{
+            print '<a class="chatGroups unreadChat" href="#' . $x . '">' . $r . '</a> ';}}
+            else{
+              print '<a class="chatGroups" href="#' . $x . '">' . $r . '</a> ';
+
+            }
+        }else{
+          if($x == $_SESSION["country"]){
           }else{
-          print '<a class="chatGroups" href="#' . $r . '">' . $r . '</a> ';
+          print '<a class="chatGroups" href="#' . $x . '">' . $r . '</a> ';
         }}
-      }
+      }}}
 
       ?>
     </div>
@@ -90,7 +117,7 @@ require_once("dashboardHeader.php");
       </div>
 
       <div id="executiveBoard" class="chatContent">
-        <h2>Chat with Executive Board</h2>
+        <h2 style="text-align: center;" >Chat with Executive Board</h2>
         <div class="chatWindow" id="content">
           <?php
           $_SESSION['receiverCountry'] = 'eb';
@@ -114,7 +141,7 @@ require_once("dashboardHeader.php");
       </div>
 
       <div id="moderator" class="chatContent">
-        <h2>Chat with Moderator</h2>
+        <h2 style="text-align: center;">Chat with Moderator</h2>
         <div class="chatWindow" id="content">
           <?php
           $_SESSION['receiverCountry'] = 'moderator';
@@ -138,7 +165,7 @@ require_once("dashboardHeader.php");
       </div>
 
       <div id="secretariat" class="chatContent">
-        <h2>Chat with Secretariat</h2>
+        <h2 style="text-align: center;">Chat with Secretariat</h2>
         <div class="chatWindow" id="content">
           <?php
           $_SESSION['receiverCountry'] = 'secretariat';
@@ -162,29 +189,33 @@ require_once("dashboardHeader.php");
       </div>
 
       <?php
+      if(isset($_SESSION["committee"])){
       $chatList = getChats($conn, $_SESSION["committee"]);
       while ($row = $chatList->fetch_assoc()) {
         foreach ($row as $r) {
-          $_SESSION['receiverCountry'] = $r;
+          $x= preg_replace('/\s+/', '', $r);
 
-          if($r == $_SESSION["country"]){
+          $_SESSION['receiverCountry'] = $x;
+
+          if($x == $_SESSION["country"]){
             
           }else{
-          print '<div class="chatContent" id=' . $r . '>
-            <h2>Chat with ' . $r . '</h2>
+          print '<div class="chatContent" id=' . $x . '>
+            <h2 style="text-align: center;">Chat with ' . $r . '</h2>
               <div class="chatWindow" id="content">';
                 getChatContent($conn, $_SESSION["committee"], $_SESSION["receiverCountry"], $_SESSION["country"]);
               print '</div>
             ';
-            $_SESSION["receiverCountry"] = $r;
-            $_SESSION["position"] = ('#'.$r);
+            $_SESSION["receiverCountry"] = $x;
+            $_SESSION["position"] = ('#'.$x);
              print '<div class="userInput">';
             print '<form id="chatForm" action=submitChat.php?location=' . $_SESSION["receiverCountry"] . '&position=' . $_SESSION["position"] . ' method="POST">';
           print '<input type="text" name="message" class="chatBox" placeholder="Type a message" id="message"><button class="chatSend" type="submit" value="submit" name="submit">Send</button>
+          <button class="chatSend" type="submit" value="reset" name="reset">Mark as read</button>
           </form>'; 
            print '</div></div>'; 
         }}
-      } ?>
+      }} ?>
 
     </div>
     </div>
