@@ -42,7 +42,7 @@
                 ?>
                 <p> Password Reset for  </p>
                 <input type="text" name="email" placeholder="Email ID" class="inputField">
-                <input type="text" name="reEmail" placeholder="Re-enter Email ID" class="inputField">
+                <input type="text" name="reEmail" placeholder="Re-enter Email ID" class="inputField">   
                 <input type="password" name="pwd" placeholder="Password" class="inputField">
                 <input type="password" name="rePwd" placeholder="Re-enter Password" class="inputField">
                 <button class="submit inputField" type="submit" name="submit">Reset</button>

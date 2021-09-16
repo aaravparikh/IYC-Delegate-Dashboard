@@ -9,6 +9,7 @@ if (!isset($_SESSION["userId"])) {
     header("location:register");
 }
 
+
 $delData = getStatus($conn);
 
 
@@ -16,7 +17,7 @@ if ($delData !== null) {
     $_SESSION["delId"] = $delData["delId"];
     $_SESSION["delName"] = $delData["delName"];
     $_SESSION["committee"] = $delData["committee"];
-    $_SESSION["country"] = $delData["country"];
+    $_SESSION["country"] = preg_replace('/\s+/', '',    $delData["country"]);
     $_SESSION["paymentStatus"] = $delData["paymentStatus"];
     $_SESSION["discordStatus"] = $delData["discordStatus"]; 
     if ($data = getPreference($conn, $delData["delId"])) {
