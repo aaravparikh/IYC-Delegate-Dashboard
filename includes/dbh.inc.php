@@ -5,7 +5,7 @@ $dbUsername="root";
 $dbPassword="";
 $dbName="iyc2021";  
  */
- $servername="localhost";
+$servername="localhost";
 $dbUsername="u429279072_iyc";
 $dbPassword="2y!0?ng/0]Fd";
 $dbName="u429279072_iyc2021";    
